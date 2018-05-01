@@ -2,7 +2,7 @@ import skimage.io as io
 import numpy as np
 
 def layer2bmp(automata, index):
-    image = np.copy(automata)
+    image = np.copy(automata._data[index])
     image = image * 255
 
     io.imsave("renders/automata_{:0>5d}.bmp".format(index), image)
